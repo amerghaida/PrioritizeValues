@@ -44,4 +44,10 @@ def initPrioritizeValues(value_generator_function):
     def __ge__(self, other):
       return self.compare_priority(other, operator.ge, True)  # >=
 
+    def __str__(self):
+      return 'PrioritizeValues' + str(self.values)
+
+    def toJSON(self):
+      return str(self)
+
   return PrioritizeValues
