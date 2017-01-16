@@ -27,5 +27,11 @@ class TestPrioritizeValues(unittest.TestCase):
     self.assertTrue(pv(2) >= pv(1))
     self.assertTrue(pv(2) > pv(1))
 
+  def test_toJSON(self):
+    pv = PrioritizeValues.initPrioritizeValues(lambda a: (a, 1/a))
+
+    self.assertEqual(pv(2).toJSON(), 'PrioritizeValues(2, 0.5)')
+
+
 
 unittest.main()
